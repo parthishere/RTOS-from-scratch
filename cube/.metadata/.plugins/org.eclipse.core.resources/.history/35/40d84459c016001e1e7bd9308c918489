@@ -1,0 +1,57 @@
+#include "uart.h"
+#include <stdio.h>
+#include <stdint.h>
+
+#define GPIOA_EN (1U << 17)
+#define CR1_TRANS_EN (1U << 3)
+#define CR1_UART_EN (1U << 0)
+#define TXE (1U << 7)
+
+#define SYS_FREQ 8000000
+#define APB_CLK SYS_FREQ
+#define BAUD_RATE 115200
+
+void compute_and_set_baud_rate(uint32_t peripheral_clk, uint32_t baudrate);
+
+int __io_putchar(int ch)
+{
+	uart2_send(ch);
+	return ch;
+}
+
+void uart2_init(void){
+	// enable clock access to gpio A
+	RCC->AHBENR |= GPIOA_EN;
+
+	// set PA2, PA3 mode to Alternate function
+	GPIOA->MODER |= (GPIOA -> MODER | (1 << 5)) & ~(1 << 4);
+
+	// set alternate function type AFSEL2[3:0] = AF1(0001), AFSEL3[3:0] = AF1(0001),	which is UART
+	GPIOA->AFR[0] |= (GPIOA->AFR[0] | (1 << 4) | (1 << 8)) & ~((1 << 5) | (1 << 6) | (1 << 7) | (1 << 9) | (1 << 10) | (1 << 11));
+
+	// enable clock access to UART 2
+	RCC->APB1ENR |= (1U << 17);
+
+	// configure the buad rate
+	compute_and_set_baud_rate(APB_CLK, BAUD_RATE);
+
+	// set the transfer direction
+	USART2->CR1 = CR1_TRANS_EN;
+
+	// enable UART module
+	USART2->CR1 |= CR1_UART_EN;
+}
+
+void uart2_send(int8_t data){
+	// make sure the transmitter data register is empty
+	while(!(USART2->ISR & TXE));
+
+	// transmit the data
+	USART2->TDR |= (data & 0xFF);
+
+
+}
+
+void compute_and_set_baud_rate(uint32_t peripheral_clk, uint32_t baudrate){
+	USART2->BRR = (peripheral_clk + (baudrate / 2)) / baudrate;
+}

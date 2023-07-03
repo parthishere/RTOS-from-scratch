@@ -1,0 +1,4 @@
+uart.c:16:5:__io_putchar	1
+uart.c:22:6:uart2_init	1
+uart.c:45:6:uart2_send	2
+uart.c:55:6:compute_and_set_baud_rate	1

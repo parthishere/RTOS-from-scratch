@@ -1,0 +1,17 @@
+02:10:03 **** Incremental Build of configuration Debug for project uart_driver_stm32f070 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "uart_driver_stm32f070.elf" @"objects.list"   -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/uart_driver_stm32f070/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_driver_stm32f070.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: uart_driver_stm32f070.elf
+ 
+arm-none-eabi-size   uart_driver_stm32f070.elf 
+arm-none-eabi-objdump -h -S  uart_driver_stm32f070.elf  > "uart_driver_stm32f070.list"
+   text	   data	    bss	    dec	    hex	filename
+   5760	    108	   1588	   7456	   1d20	uart_driver_stm32f070.elf
+Finished building: default.size.stdout
+ 
+Finished building: uart_driver_stm32f070.list
+ 
+
+02:10:03 Build Finished. 0 errors, 0 warnings. (took 426ms)
+

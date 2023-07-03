@@ -1,0 +1,12 @@
+02:20:05 **** Incremental Build of configuration Debug for project new_led ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:2:10: fatal error: uart.h: No such file or directory
+    2 | #include "uart.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+02:20:06 Build Failed. 2 errors, 0 warnings. (took 231ms)
+
