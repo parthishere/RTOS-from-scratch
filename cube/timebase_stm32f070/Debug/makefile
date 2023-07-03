@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := uart_driver_stm32f070
+BUILD_ARTIFACT_NAME := timebase_stm32f070
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-uart_driver_stm32f070.elf \
+timebase_stm32f070.elf \
 
 MAP_FILES += \
-uart_driver_stm32f070.map \
+timebase_stm32f070.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-uart_driver_stm32f070.list \
+timebase_stm32f070.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: uart_driver_stm32f070.elf secondary-outputs
+main-build: timebase_stm32f070.elf secondary-outputs
 
 # Tool invocations
-uart_driver_stm32f070.elf uart_driver_stm32f070.map: $(OBJS) $(USER_OBJS) /home/parth/Work/RTOS/cube/uart_driver_stm32f070/STM32F070C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "uart_driver_stm32f070.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/uart_driver_stm32f070/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_driver_stm32f070.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+timebase_stm32f070.elf timebase_stm32f070.map: $(OBJS) $(USER_OBJS) /home/parth/Work/RTOS/cube/timebase_stm32f070/STM32F070C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "timebase_stm32f070.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/timebase_stm32f070/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timebase_stm32f070.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-uart_driver_stm32f070.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "uart_driver_stm32f070.list"
+timebase_stm32f070.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "timebase_stm32f070.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout uart_driver_stm32f070.elf uart_driver_stm32f070.list uart_driver_stm32f070.map
+	-$(RM) default.size.stdout timebase_stm32f070.elf timebase_stm32f070.list timebase_stm32f070.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

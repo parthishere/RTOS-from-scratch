@@ -1,49 +1,56 @@
-02:33:11 **** Incremental Build of configuration Debug for project uart_driver_stm32f070 ****
+03:54:12 **** Build of configuration Debug for project blocking_code_stm32f71 ****
 make -j12 all 
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "uart_driver_stm32f070.elf" @"objects.list"   -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/uart_driver_stm32f070/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_driver_stm32f070.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: uart_driver_stm32f070.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "blocking_code_stm32f71.elf" @"objects.list"   -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/blocking_code_stm32f71/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blocking_code_stm32f71.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blocking_code_stm32f71.elf
  
-arm-none-eabi-size   uart_driver_stm32f070.elf 
-arm-none-eabi-objdump -h -S  uart_driver_stm32f070.elf  > "uart_driver_stm32f070.list"
+arm-none-eabi-size   blocking_code_stm32f71.elf 
+arm-none-eabi-objdump -h -S  blocking_code_stm32f71.elf  > "blocking_code_stm32f71.list"
    text	   data	    bss	    dec	    hex	filename
-   5772	    108	   1588	   7468	   1d2c	uart_driver_stm32f070.elf
+   6004	    112	   1592	   7708	   1e1c	blocking_code_stm32f71.elf
 Finished building: default.size.stdout
  
-Finished building: uart_driver_stm32f070.list
+Finished building: blocking_code_stm32f71.list
  
-02:33:14 **** Incremental Build of configuration Debug for project uart_driver_stm32f070 ****
+03:54:24 **** Incremental Build of configuration Debug for project blocking_code_stm32f71 ****
 make -j12 all 
-arm-none-eabi-size   uart_driver_stm32f070.elf 
+arm-none-eabi-size   blocking_code_stm32f71.elf 
    text	   data	    bss	    dec	    hex	filename
-   5772	    108	   1588	   7468	   1d2c	uart_driver_stm32f070.elf
+   6004	    112	   1592	   7708	   1e1c	blocking_code_stm32f71.elf
 Finished building: default.size.stdout
  
-01:50:22 **** Build of configuration Debug for project uart_driver_stm32f070 ****
+03:54:45 **** Incremental Build of configuration Debug for project blocking_code_stm32f71 ****
 make -j12 all 
-arm-none-eabi-size   uart_driver_stm32f070.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "blocking_code_stm32f71.elf" @"objects.list"   -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/blocking_code_stm32f71/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blocking_code_stm32f71.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blocking_code_stm32f71.elf
+ 
+arm-none-eabi-size   blocking_code_stm32f71.elf 
+arm-none-eabi-objdump -h -S  blocking_code_stm32f71.elf  > "blocking_code_stm32f71.list"
    text	   data	    bss	    dec	    hex	filename
-   5772	    108	   1588	   7468	   1d2c	uart_driver_stm32f070.elf
+   5956	    112	   1592	   7660	   1dec	blocking_code_stm32f71.elf
 Finished building: default.size.stdout
  
-01:58:50 **** Incremental Build of configuration Debug for project uart_driver_stm32f070 ****
+Finished building: blocking_code_stm32f71.list
+ 
+03:54:56 **** Incremental Build of configuration Debug for project blocking_code_stm32f71 ****
 make -j12 all 
-arm-none-eabi-size   uart_driver_stm32f070.elf 
+arm-none-eabi-size   blocking_code_stm32f71.elf 
    text	   data	    bss	    dec	    hex	filename
-   5772	    108	   1588	   7468	   1d2c	uart_driver_stm32f070.elf
+   5956	    112	   1592	   7660	   1dec	blocking_code_stm32f71.elf
 Finished building: default.size.stdout
  
-02:10:03 **** Incremental Build of configuration Debug for project uart_driver_stm32f070 ****
+03:55:44 **** Incremental Build of configuration Debug for project blocking_code_stm32f71 ****
 make -j12 all 
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -c -I../Inc -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Include/ -I/home/parth/Work/RTOS/cube/new_led/chip_headers/Device/ST/STM32F0xx/Include/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "uart_driver_stm32f070.elf" @"objects.list"   -mcpu=cortex-m0 -T"/home/parth/Work/RTOS/cube/uart_driver_stm32f070/STM32F070C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_driver_stm32f070.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: uart_driver_stm32f070.elf
- 
-arm-none-eabi-size   uart_driver_stm32f070.elf 
-arm-none-eabi-objdump -h -S  uart_driver_stm32f070.elf  > "uart_driver_stm32f070.list"
+arm-none-eabi-size   blocking_code_stm32f71.elf 
    text	   data	    bss	    dec	    hex	filename
-   5760	    108	   1588	   7456	   1d20	uart_driver_stm32f070.elf
+   5956	    112	   1592	   7660	   1dec	blocking_code_stm32f71.elf
 Finished building: default.size.stdout
  
-Finished building: uart_driver_stm32f070.list
+03:56:33 **** Incremental Build of configuration Debug for project blocking_code_stm32f71 ****
+make -j12 all 
+arm-none-eabi-size   blocking_code_stm32f71.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5956	    112	   1592	   7660	   1dec	blocking_code_stm32f71.elf
+Finished building: default.size.stdout
  

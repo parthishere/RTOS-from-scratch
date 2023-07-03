@@ -47,7 +47,7 @@ void uart2_send(int8_t data){
 	while(!(USART2->ISR & TXE));
 
 	// transmit the data
-	USART2->TDR |= (data & 0xFF);
+	USART2->TDR = (data & 0xFF);
 
 
 }
